@@ -13,7 +13,7 @@ public class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//img[@alt='profile picture']")
+    @FindBy(xpath = "//img[@class='oxd-userdropdown-img']")
     WebElement userIconHomePage;
 
 

@@ -2,17 +2,18 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import pages.*;
 import setup.DriverFactory;
 import setup.Util;
 
-public class AdminTest {
-
+public class LeaveTest {
     WebDriver driver;
     LoginPage loginPage;
     BasePage basePage;
-    AdminPage adminPage;
+    LeavePage leavePage;
     HomePage homepage;
 
 
@@ -21,7 +22,7 @@ public class AdminTest {
         driver = DriverFactory.getDriver(Util.getProperties("browserName"));
         loginPage = new LoginPage(driver);
         basePage = new BasePage(driver);
-        adminPage = new AdminPage(driver);
+        leavePage = new LeavePage(driver);
         homepage = new HomePage(driver);
         basePage.launchApplication(Util.getProperties("url"));
         loginPage.enterUserName(Util.getProperties("username"));
@@ -32,32 +33,15 @@ public class AdminTest {
 
     }
 
-
-
-    @Test()
-    public void CheckIfAdminPageIsLoading(){
-        homepage.clickOnAdminTab();
+    @Test
+    public void CheckIfLeavePageIsLoading(){
+        homepage.clickOnLeaveTab();
         Util.pauseExecutionForSeconds(2);
-        Assert.assertTrue(homepage.checkIfAdminPageVisible());
-
-
-    }
-
-    @Test()
-    public void VerifyUserManagementIsVisible(){
-        homepage.clickOnAdminTab();
-        Util.pauseExecutionForSeconds(2);
-        Assert.assertTrue(adminPage.CheckIfUserManagmentDrpDownBoxIsVisible());
-    }
-
-    @Test()
-    public  void enterSystemUserName(){
-        homepage.clickOnAdminTab();
-        Util.pauseExecutionForSeconds(3);
-        adminPage.SystemUserUserName().sendKeys("Sumana");
-        Util.pauseExecutionForSeconds(3);
+        Assert.assertTrue(homepage.checkIfLeavePageVisible());
 
     }
+
+
 
     @AfterClass(alwaysRun = true)
     public void tearDown(){
@@ -65,4 +49,11 @@ public class AdminTest {
     }
 
 
+
+
+
+
 }
+
+
+
