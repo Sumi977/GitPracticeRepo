@@ -161,9 +161,9 @@ public class HomePage {
     public boolean checkIfAdministratorAccessPageVisible() {
         return AdministratorAccessWindowPopup.isDisplayed();
     }
-    //public boolean checkIfAddButtonIsVisible(){
-       // return AddButton.isDisplayed();
-    //}
+    public boolean checkIfClaimPageIsVisible() {
+        return ClaimTitleOnHeader.isDisplayed();
+    }
 
 
 

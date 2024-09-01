@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<suite name = "Validate Test Case Execution for HRM portal">
+    <test name = "Sanity Test" thread-count="1" parallel="false">
+        <groups>
+        <run>
+            <include name ="sanity"/>
+            <include name = "regression"/>
+
+        </run>
+        </groups>
+        <classes>
+            <class name = "test.AdminTest" />
+            <class name = "test.BuzzTest"/>
+            <class name = "test.LeaveTest"/>
+            <class name = "test.ClaimTest"/>
+        </classes>
+    </test>
+</suite>

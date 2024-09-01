@@ -10,6 +10,18 @@ public class BuzzPage {
     public BuzzPage(WebDriver driver){
         this.driver = driver;
     }
+    @FindBy(xpath = "//textarea[@placeholder=\"What's on your mind?\"]")
+    WebElement whatIsInYourMindTextBox;
+    @FindBy(xpath = "//button[@type='submit']")
+    WebElement PostYourText;
+
+    public WebElement  WriteInaTextBox(){
+        return whatIsInYourMindTextBox;
+    }
+    public void ShareYoursText(){
+         PostYourText.click();
+    }
+
 
 }
 

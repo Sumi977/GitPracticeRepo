@@ -34,7 +34,7 @@ public class AdminTest {
 
 
 
-    @Test()
+    @Test(groups = {"sanity"})
     public void CheckIfAdminPageIsLoading(){
         homepage.clickOnAdminTab();
         Util.pauseExecutionForSeconds(2);
@@ -43,14 +43,14 @@ public class AdminTest {
 
     }
 
-    @Test()
+    @Test(groups = {"regression"})
     public void VerifyUserManagementIsVisible(){
         homepage.clickOnAdminTab();
         Util.pauseExecutionForSeconds(2);
         Assert.assertTrue(adminPage.CheckIfUserManagmentDrpDownBoxIsVisible());
     }
 
-    @Test()
+    @Test(groups={"sanity"})
     public  void enterSystemUserName(){
         homepage.clickOnAdminTab();
         Util.pauseExecutionForSeconds(3);
